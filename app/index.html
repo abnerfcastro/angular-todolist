@@ -1,0 +1,36 @@
+<!--
+ * Author: Abner Castro
+ * Date: August 13th, 2016
+ * Description:
+ *      Based on tutorial by David East. Available in http://medialoot.com/blog/angularjs-for-absolute-beginners/.
+ *      Main HTML page for application.
+ -->
+
+<!doctype html>
+<html lang="en">
+<head>
+    <title>AngularJS - Todolist</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="app.js"></script>
+</head>
+<body ng-app="todoApp">
+    <div class="page-container" ng-controller="TodoCtrl">
+        <h2>Todo</h2>
+        <ul class="todo-list" ng-repeat="todo in todos track by $index">
+            <li>
+                <span>{{todo}}</span>
+                <button class="bt bt-achieve" ng-click="done(todo)">Done</button>
+            </li>
+        </ul>
+
+        <ul class="add-todo">
+            <li>
+                <input type="text" class="txt" placeholder="New Todo" ng-model="newTodo" ng-keyup="add($event)" />
+            </li>
+        </ul>   
+    </div>
+
+         
+</body>
+</html>
